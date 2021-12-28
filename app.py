@@ -21,7 +21,7 @@ def read():
     return jsonify({"Pole":vysledok}),200
 
 @app.route("/read2", methods=["GET"])
-def read():
+def read2():
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.execute("SELECT Nazov from Pole")
