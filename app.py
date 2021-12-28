@@ -8,7 +8,7 @@ import mysql.connector as MYSQL
 app = Flask(__name__)
 CORS(app)
 
-ovocie = ["jablko","pomaranc","jahoda"]
+ovocie = ["jablko","pomaranc","jahoda", "nejahoda"]
 
 @app.route("/", methods=["GET"])
 def main():
