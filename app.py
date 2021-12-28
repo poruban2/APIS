@@ -9,9 +9,9 @@ CORS(app)
 
 @app.route("/read1", methods=["GET"])
 def read1():
-    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("SELECT Nazov, Uroda from Pole")
+    cursor.execute("SELECT * from Amounts")
     result = cursor.fetchall()
     cursor.close()
     myDb.close()
