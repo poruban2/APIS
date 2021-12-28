@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route("/read1", methods=["GET"])
-def read():
+def main():
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.execute("SELECT Nazov, Uroda from Pole")
