@@ -3,34 +3,54 @@ from flask import request
 from flask import jsonify
 from flask_cors import CORS
 import mysql.connector as MYSQL
+from flask_ngrok import run_with_ngrok
 
 
 app = Flask(__name__)
 CORS(app)
-
-ovocie = ["jablko","pomaranc","jahoda", "nejahoda"]
+run_with_ngrok(app)
 
 @app.route("/", methods=["GET"])
 def main():
-    return jsonify({"ovocie":ovocie}),200
+    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    cursor = myDb.cursor()
+    cursor.exectue("SELECT Nazov, Uroda from Pole")
+    result = cursor.fetchall()
+    cursor.close()
+    myDb.close()
+    vysledok = []
+    for i in result:
+        vysledok.append('{'+'{}'.format(i[0])+'}')
+    return jsonify({"Pole":vysledok}),200
 
 @app.route("/vytvorit", methods=["POST"])
 def create():
     data = request.get_json(force=True)
     data_dict = dict(data)
-    ovocie.append(data_dict["vytvorit"])
+    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    cursor = myDb.cursor()
+    cursor.exectue("INSERT INTO Pole (Nazov) VALUES ({})".format(data_dict["vytvorit"]))
+    myDb.commit()
     return jsonify("created"),201
 
 @app.route("/upravit/<id>", methods=["PUT"])
 def update(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
-    ovocie[int(id)] = data_dict["upravit"]
+    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    cursor = myDb.cursor()
+    cursor.exectue("UPDATE Pole set Nazov='{}' where ID={}".format(data_dict["upravit"], id))
+    myDb.commit()
     return jsonify("updated"),201
 
 @app.route("/vymazat/<id>", methods=["DELETE"])
 def delete(id):
-    del ovocie[int(id)]
+       data = request.get_json(force=True)
+    data_dict = dict(data)
+    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    cursor = myDb.cursor()
+    cursor.exectue("DELETE from Pole where ID={}".format(data_dict["vymazat"], id))
+    myDb.commit()
     return jsonify("deleted"),204
 
 if __name__ == "__main__":
