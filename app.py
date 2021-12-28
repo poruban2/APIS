@@ -17,7 +17,7 @@ def read1():
     myDb.close()
     vysledok = []
     for i in result:
-        vysledok.append(f'{i[0], i[1]}')
+        vysledok.append(i)
     return jsonify({"Pole":vysledok}),200
 
 @app.route("/read2", methods=["GET"])
