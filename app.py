@@ -7,8 +7,8 @@ import mysql.connector as MYSQL
 app = Flask(__name__)
 CORS(app)
 
-@app.route("/", methods=["GET"])
-def main():
+@app.route("/read1", methods=["GET"])
+def read():
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.execute("SELECT Nazov, Uroda from Pole")
@@ -18,6 +18,19 @@ def main():
     vysledok = []
     for i in result:
         vysledok.append(f'{i[0], i[1]}')
+    return jsonify({"Pole":vysledok}),200
+
+@app.route("/read2", methods=["GET"])
+def read():
+    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    cursor = myDb.cursor()
+    cursor.execute("SELECT Nazov from Pole")
+    result = cursor.fetchall()
+    cursor.close()
+    myDb.close()
+    vysledok = []
+    for i in result:
+        vysledok.append(f'{i[0]}')
     return jsonify({"Pole":vysledok}),200
 
 @app.route("/vytvorit", methods=["POST"])
