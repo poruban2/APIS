@@ -11,7 +11,7 @@ CORS(app)
 def main():
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
-    cursor.exectue("SELECT Nazov, Uroda from Pole")
+    cursor.execute("SELECT Nazov, Uroda from Pole")
     result = cursor.fetchall()
     cursor.close()
     myDb.close()
@@ -26,7 +26,7 @@ def create():
     data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
-    cursor.exectue("INSERT INTO Pole (Nazov) VALUES ({})".format(data_dict["vytvorit"]))
+    cursor.execute("INSERT INTO Pole (Nazov) VALUES ({})".format(data_dict["vytvorit"]))
     myDb.commit()
     return jsonify("created"),201
 
@@ -36,7 +36,7 @@ def update(id):
     data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
-    cursor.exectue("UPDATE Pole set Nazov='{}' where ID={}".format(data_dict["upravit"], id))
+    cursor.execute("UPDATE Pole set Nazov='{}' where ID={}".format(data_dict["upravit"], id))
     myDb.commit()
     return jsonify("updated"),201
 
@@ -46,7 +46,7 @@ def delete(id):
     data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
-    cursor.exectue("DELETE from Pole where ID={}".format(data_dict["vymazat"], id))
+    cursor.execute("DELETE from Pole where ID={}".format(data_dict["vymazat"], id))
     myDb.commit()
     return jsonify("deleted"),204
 
