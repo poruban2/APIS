@@ -3,12 +3,9 @@ from flask import request
 from flask import jsonify
 from flask_cors import CORS
 import mysql.connector as MYSQL
-from flask_ngrok import run_with_ngrok
-
 
 app = Flask(__name__)
 CORS(app)
-run_with_ngrok(app)
 
 @app.route("/", methods=["GET"])
 def main():
