@@ -12,7 +12,7 @@ run_with_ngrok(app)
 
 @app.route("/", methods=["GET"])
 def main():
-    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYQSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.exectue("SELECT Nazov, Uroda from Pole")
     result = cursor.fetchall()
@@ -27,7 +27,7 @@ def main():
 def create():
     data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYQSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.exectue("INSERT INTO Pole (Nazov) VALUES ({})".format(data_dict["vytvorit"]))
     myDb.commit()
@@ -37,7 +37,7 @@ def create():
 def update(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYQSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.exectue("UPDATE Pole set Nazov='{}' where ID={}".format(data_dict["upravit"], id))
     myDb.commit()
@@ -47,7 +47,7 @@ def update(id):
 def delete(id):
        data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYQSQL.connect(host="147.323.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYQSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
     cursor.exectue("DELETE from Pole where ID={}".format(data_dict["vymazat"], id))
     myDb.commit()
