@@ -22,7 +22,7 @@ def read1():
 
 @app.route("/read2", methods=["GET"])
 def read2():
-    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     cursor.execute("SELECT Nazov from Pole")
     result = cursor.fetchall()
@@ -37,9 +37,9 @@ def read2():
 def create():
     data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("INSERT INTO Pole (Nazov) VALUES ({})".format(data_dict["vytvorit"]))
+    cursor.execute("INSERT INTO Amounts (Quantity) VALUES ({})".format(data_dict["vytvorit"]))
     myDb.commit()
     return jsonify("created"),201
 
@@ -47,9 +47,9 @@ def create():
 def update(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("UPDATE Pole set Nazov='{}' where ID={}".format(data_dict["upravit"], id))
+    cursor.execute("UPDATE Amounts set Price='{}' where AmountID={}".format(data_dict["upravit"], id))
     myDb.commit()
     return jsonify("updated"),201
 
@@ -57,9 +57,9 @@ def update(id):
 def delete(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
-    myDb = MYSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("DELETE from Pole where ID={}".format(data_dict["vymazat"], id))
+    cursor.execute("DELETE from Amounts where ExtentID={}".format(data_dict["vymazat"], id))
     myDb.commit()
     return jsonify("deleted"),204
 
