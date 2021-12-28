@@ -17,7 +17,7 @@ def main():
     myDb.close()
     vysledok = []
     for i in result:
-        vysledok.append('{'+'{}'.format(i[0])+'}')
+        vysledok.append(f'{i[0], i[1]}')
     return jsonify({"Pole":vysledok}),200
 
 @app.route("/vytvorit", methods=["POST"])
