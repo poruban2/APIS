@@ -42,7 +42,7 @@ def update(id):
 
 @app.route("/vymazat/<id>", methods=["DELETE"])
 def delete(id):
-       data = request.get_json(force=True)
+    data = request.get_json(force=True)
     data_dict = dict(data)
     myDb = MYQSQL.connect(host="147.232.40.14", user ="rp805bv", passwd="eiGh5thi", database="rp805bv")
     cursor = myDb.cursor()
