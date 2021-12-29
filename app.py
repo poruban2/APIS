@@ -24,7 +24,7 @@ def read1():
 def read2():
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("SELECT Nazov from Pole")
+    cursor.execute("SELECT * from Amounts")
     result = cursor.fetchall()
     cursor.close()
     myDb.close()
