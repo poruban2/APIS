@@ -21,18 +21,33 @@ def read1():
         vysledok.append(i)
     return jsonify({'Amounts':vysledok}),200
 
-@app.route("/read2", methods=["GET"])
+@app.route("/read_extents", methods=["GET"])
 def read2():
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
-    cursor.execute("SELECT * from Amounts")
+    file_str = open(r'./EXTENTS/SELECT.txt').read()
+    cursor.execute(file_str, multi=True)
     result = cursor.fetchall()
     cursor.close()
     myDb.close()
     vysledok = []
     for i in result:
-        vysledok.append(f'{i[0]}')
-    return jsonify({"Pole":vysledok}),200
+        vysledok.append(i)
+    return jsonify({'Extents':vysledok}),200
+
+@app.route("/read_locations", methods=["GET"])
+def read3():
+    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
+    cursor = myDb.cursor()
+    file_str = open(r'./LOCATIONS/SELECT.txt').read()
+    cursor.execute(file_str, multi=True)
+    result = cursor.fetchall()
+    cursor.close()
+    myDb.close()
+    vysledok = []
+    for i in result:
+        vysledok.append(i)
+    return jsonify({'Locations':vysledok}),200
 
 @app.route("/vytvorit", methods=["POST"])
 def create():
