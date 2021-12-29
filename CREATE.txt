@@ -1,0 +1,30 @@
+CREATE TABLE Locations (
+    Id INT AUTO_INCREMENT,
+    Name TEXT,
+    Address TEXT,
+    Manager TEXT,
+    Contact TEXT,
+    CONSTRAINT LocationId PRIMARY KEY(Id)
+);
+
+CREATE TABLE Extents (
+    Id INT AUTO_INCREMENT,
+    Length INT,
+    Width INT,
+    Seedlings TEXT,
+    CONSTRAINT ExtentId PRIMARY KEY(Id)
+);
+
+CREATE TABLE Amounts (
+    Id INT AUTO_INCREMENT,
+    Quantity INT,
+    Price INT,
+    LocationId INT,
+    ExtentId INT,
+    CONSTRAINT AmountId PRIMARY KEY(Id),
+    CONSTRAINT AmountLocationId FOREIGN KEY(LocationId)
+    REFERENCES Locations(Id) ON DELETE CASCADE,
+    CONSTRAINT AmountExtentId FOREIGN KEY(ExtentId)
+    REFERENCES Extents(Id) ON DELETE CASCADE
+);
+
