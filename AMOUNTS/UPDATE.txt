@@ -1,0 +1,1 @@
+UPDATE Amounts SET Quantity = {}, Price = {}, LocationId = {}, ExtentId = {} WHERE Id = {};

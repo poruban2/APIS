@@ -1,0 +1,1 @@
+INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES ({}, {}, {}, {});
