@@ -19,7 +19,7 @@ def read1():
     vysledok = []
     for i in result:
         vysledok.append(i)
-    return jsonify({vysledok}),200
+    return jsonify({'Amounts':vysledok}),200
 
 @app.route("/read2", methods=["GET"])
 def read2():
