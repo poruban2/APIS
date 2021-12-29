@@ -12,7 +12,7 @@ def read1():
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
 #     for line in open(r'./AMOUNTS/SELECT.txt')
-        cursor.execute(line)
+#        cursor.execute(line)
     cursor.execute('SELECT * FROM Amounts')
     result = cursor.fetchall()
     cursor.close()
