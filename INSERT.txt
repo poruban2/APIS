@@ -1,7 +1,7 @@
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Presov", "Hlavna 73 080 01 Presov", "Jakub Zavacky", "+421915721556");
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Kosice", "Trieda SNP 48A 040 11 Kosice", "Dalibor Hreha", "+421905782145");
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Plavnica", "Plavnica 415, 065 45 Plavnica", "Timotej Kupec", "+421907578149");
-INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Podolinec", "Hliník 28, 065 03 Podolínec", "Peter Urban", "+421905781235");
+INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Podolinec", "Hlinik 28, 065 03 Podolinec", "Peter Urban", "+421905781235");
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Hniezdne", "Hniezdne 180, 065 01 Hniezdne", "Milan Gurega", "+421915789456");
 
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (1278, 835, "Zemiaky");
