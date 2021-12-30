@@ -3,12 +3,14 @@ INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Kosice", "Tr
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Plavnica", "Plavnica 415, 065 45 Plavnica", "Timotej Kupec", "+421907578149");
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Podolinec", "Hlinik 28, 065 03 Podolinec", "Peter Urban", "+421905781235");
 INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Hniezdne", "Hniezdne 180, 065 01 Hniezdne", "Milan Gurega", "+421915789456");
+INSERT INTO Locations (Name, Address, Manager, Contact) VALUES ("PD Jarabina", "Mierova 335, 064 01 Stara Lubovna", "Oliver Patoraj", "+421908327906");
 
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (1278, 835, "Zemiaky");
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (1634, 1075, "Ovos");
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (1489, 957, "Kukurica");
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (2568, 1257, "Zrno");
 INSERT INTO Extents (Length, Width, Seedlings) VALUES (1950, 1800, "Lucerna");
+INSERT INTO Extents (Length, Width, Seedlings) VALUES (1000, 650, "Psenica");
 
 
 INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (13758 , 19261, 2, 1);
@@ -16,5 +18,6 @@ INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (50918 , 1185
 INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (46125 , 11955, 3, 2);
 INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (67890 , 23805, 4, 5);
 INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (50100 , 20500, 5, 4);
+INSERT INTO Amounts (Quantity, Price, LocationId, ExtentId) VALUES (23500 , 10250, 6, 6);
 
 
