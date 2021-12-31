@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pozemkova evidencia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <div class="grid">
+            <nav class="nav-logo">
+                <header>
+    
+                    <link rel="stylesheet" href="styles/styles-nav.css">
+                    
+                    <img class="logo" src="images/logo-nav-PEP.png" alt="logo">
+                    <nav>
+                        <ul class="nav-links">
+                            <li><a href="index.html">Domov</a></li>
+                            <li><a href="products.html">Produkty</a></li>
+                            <li><a href="workers.html">Pozemky</a></li>
+                        </ul>
+                    </nav>
+                    <a class="cta" href="#"><button>Kontakt</button></a>
+                </header>
+            </nav>
+          
+            <div class="table-box">
+                <link rel="stylesheet" href="styles/table.css">
+                <div>
+                    <p class="tab-p">Tabulka zamestnancov zodpovedajuci za pozemok</p>
+                    <table class="table">
+                        <thead></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>                
+            </div>
+            <div>
+                <p class="add-p">Upravit pozemok</p>
+                <div class="myFormUpdateDiv" id="myFormUpdateDiv">
+                    <form class='myFormUpdate' id="myFormUpdate">
+                        <label for="ID"></label>
+                        <input type="text" id="ID" name="ID" placeholder="ID">
+                        <label for="lname"></label>
+                        <input type="text" id="lname" name="Name" placeholder="Name">
+                        <label for="fname"></label>
+                        <input type="text" id="fname" name="Address" placeholder="Address">
+                        <label for="lname2"></label>
+                        <input type="text" id="lname2" name="Manager" placeholder="Manager">
+                        <label for="fname2"></label>
+                        <input type="text" id="fname2" name="Contact" placeholder="Contact">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+                <p class="add-p">Pridat pozemok</p>
+                <div class="form-div" id="myFormDiv">
+                    <form class='from-field' id="myForm">
+                        <label for="lname"></label>
+                        <input type="text" id="lname" name="Name" placeholder="Name">
+                        <label for="fname"></label>
+                        <input type="text" id="fname" name="Address" placeholder="Address">
+                        <label for="lname2"></label>
+                        <input type="text" id="lname2" name="Manager" placeholder="Manager">
+                        <label for="fname2"></label>
+                        <input type="text" id="fname2" name="Contact" placeholder="Contact">
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+            
+                <p class="add-p">Odobrat pozemok</p>
+                <form class='from-field' id="delete">
+                    <label for="deledLocID"></label>
+                    <input type="text" id="deledLocID" name="deledLocID" placeholder="LocationID">
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+          </div>
+          <script src="main.js"></script>>
+    </body>
+</html>

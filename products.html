@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Pozemkova evidencia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <div class="grid">
+            <nav class="nav-logo">
+                <header>
+    
+                    <link rel="stylesheet" href="styles/styles-nav.css">
+                    
+                    <img class="logo" src="images/logo-nav-PEP.png" alt="logo">
+                    <nav>
+                        <ul class="nav-links">
+                            <li><a href="index.html">Domov</a></li>
+                            <li><a href="products.html">Produkty</a></li>
+                            <li><a href="workers.html">Pozemky</a></li>
+                        </ul>
+                    </nav>
+                    <a class="cta" href="#"><button>Kontakt</button></a>
+                </header>
+            </nav>
+          
+            <div class="table-box">
+                <link rel="stylesheet" href="styles/table2.css">
+                <div>
+                    <p class="tab-p">Zoznam poli</p>
+                    <table class="table">
+                        <thead class="thead"></thead></thead>
+                        <tbody class="tbody"></tbody></tbody>
+                    </table>
+                    <div>
+                        <p class="add-p">Upravit informacie o pozemku</p>
+                        <div class="form-div-put" id="form-div-put">
+                            <form class='from-field' id="formPut">
+                                <label for="ExtentID"></label>
+                                <input type="text" id="ExtentID" name="ExtentID" placeholder="ExtentID">
+                                <label for="Lenght"></label>
+                                <input type="text" id="Lenght" name="Length" placeholder="Length">
+                                <label for="Width"></label>
+                                <input type="text" id="Width" name="Width" placeholder="Width">
+                                <label for="Seedings"></label>
+                                <input type="text" id="Seedings" name="Seedlings" placeholder="Seedings">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+
+                        <p class="add-p">Pridat informacie o pozemku</p>
+                        <div class="form-div-post" id="form-div-post">
+                            <form class='from-field' id="form-post">
+                                <label for="postLenght"></label>
+                                <input type="text" id="postLenght" name="Length" placeholder="Length">
+                                <label for="postWidth"></label>
+                                <input type="text" id="postWidth" name="Width" placeholder="Width">
+                                <label for="postSeedings"></label>
+                                <input type="text" id="postSeedings" name="Seedlings" placeholder="Seedlings">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+
+                        <p class="add-p">Odobrat informacie o pozemku</p>
+                        <form class='from-field' id="delete">
+                            <label for="ExtentId"></label>
+                            <input type="text" id="ExtentId" name="ExtentId" placeholder="ExtentId">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="tab-p2">Pocet vypestovanych plodin</p>
+                    <table class="table2">
+                        <thead class="thead2"></thead>
+                        <tbody class="tbody2"></tbody>
+                    </table>
+                    <div>
+                        <p class="add-p">Upravit plodinu</p>
+                        <div class="form-div-post2" id="formDivPut2">
+                            <form class='from-field' id="formPut2">
+                                <label for="AmountID"></label>
+                                <input type="text" id="AmountID" name="AmountID" placeholder="AmountID">
+                                <label for="putQuant"></label>
+                                <input type="text" id="putQuant" name="Quantity" placeholder="Quantity">
+                                <label for="putPrice"></label>
+                                <input type="text" id="putPrice" name="Price" placeholder="Price">
+                                <label for="putLocID"></label>
+                                <input type="text" id="putLocID" name="LocationId" placeholder="LocationID">
+                                <label for="putExtID"></label>
+                                <input type="text" id="putExtID" name="ExtentId" placeholder="ExtentID">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    <div>                  
+                        <p class="add-p">Pridat plodinu</p>
+                        <div class="form-div-post2" id="formDivPost2">
+                            <form class='from-field' id="formPost2">
+                                <label for="postQuant"></label>
+                                <input type="text" id="postQuant" name="Quantity" placeholder="Quantity">
+                                <label for="postPrice"></label>
+                                <input type="text" id="postPrice" name="Price" placeholder="Price">
+                                <label for="postLocID"></label>
+                                <input type="text" id="postLocID" name="LocationId" placeholder="LocationID">
+                                <label for="postExtID"></label>
+                                <input type="text" id="postExtID" name="ExtentId" placeholder="ExtentID">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                        <p class="add-p">Odobrat plodinu</p>
+                        <form class='from-field' id="delete2">
+                            <label for="AmountID"></label>
+                            <input type="text" id="AmountID" name="AmountID" placeholder="AmountID">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <script src="products.js"></script>
+    </body>
+</html>
