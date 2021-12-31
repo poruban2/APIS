@@ -51,105 +51,125 @@ def read3():
     return jsonify({'Locations':vysledok}),200
 
 ### INSERTS
-@app.route("/cramounts", methods=["POST"])
+@app.route("/CreateAmounts", methods=["POST"])
 def create1():
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./AMOUNTS/INSERT.txt').read()
-    cursor.execute(file_str.format(data_dict["create_amounts"]), multi=True)
+    file_str = file_str.format(data['Quantity'], data['Price'], data['LocationId'], data['ExtentId'])
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("created"),201
 
-@app.route("/crextents", methods=["POST"])
+@app.route("/CreateExtents", methods=["POST"])
 def create2():
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/INSERT.txt').read()
-    cursor.execute(file_str.format(data_dict["create_extents"]), multi=True)
+    file_str = file_str.format(data['Length'], data['Width'], data['Seedlings'])
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()    
     return jsonify("created"),201
 
-@app.route("/crlocations", methods=["POST"])
+@app.route("/CreateLocations", methods=["POST"])
 def create3():
     data = request.get_json(force=True)
     data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./LOCATIONS/INSERT.txt').read()
-    cursor.execute(file_str.format(data_dict["create_locations"]), multi=True)
+    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'])
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("created"),201
 
 ### UPDATES
-@app.route("/update_amounts/<id>", methods=["PUT"])
+@app.route("/UpdateAmounts/<id>", methods=["PUT"])
 def update1(id):
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./AMOUNTS/UPDATE.txt').read()
-    cursor.execute(file_str.format(data_dict["update_amounts"], id), multi=True)
+    file_str = file_str.format(data['Quantity'], data['Price'], data['LocationId'], data['ExtentId'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("updated"),201
 
-@app.route("/update_extents/<id>", methods=["PUT"])
+@app.route("/UpdateExtents/<id>", methods=["PUT"])
 def update2(id):
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/UPDATE.txt').read()
-    cursor.execute(file_str.format(data_dict["update_extents"], id), multi=True)
+    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("updated"),201
 
-@app.route("/update_locations/<id>", methods=["PUT"])
+@app.route("/UpdateLocations/<id>", methods=["PUT"])
 def update3(id):
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./LOCATIONS/UPDATE.txt').read()
-    cursor.execute(file_str.format(data_dict["update_locations"], id), multi=True)
+    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("updated"),201
 
 ### DELETES
-@app.route("/delete_amounts/<id>", methods=["DELETE"])
+@app.route("/DeleteAmounts/<id>", methods=["DELETE"])
 def delete1(id):
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./AMOUNTS/DELETE.txt').read()
-    cursor.execute(file_str.format(data_dict["delete_amounts"], id), multi=True)
+    file_str = file_str.format(data['Quantity'], data['Price'], data['LocationId'], data['ExtentId'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("deleted"),204
 
-@app.route("/delete_extents/<id>", methods=["DELETE"])
+@app.route("/DeleteExtents/<id>", methods=["DELETE"])
 def delete2(id):
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/DELETE.txt').read()
-    cursor.execute(file_str.format(data_dict["delete_extents"], id), multi=True)
+    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("deleted"),204
 
-@app.route("/delete_locations/<id>", methods=["DELETE"])
+@app.route("/DeleteLocations/<id>", methods=["DELETE"])
 def delete3(id):
     data = request.get_json(force=True)
     data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./LOCATIONS/DELETE.txt').read()
-    cursor.execute(file_str.format(data_dict["delete_locations"], id), multi=True)
+    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    cursor.execute(file_str, multi=True)
     myDb.commit()
+    cursor.close()
+    myDb.close()
     return jsonify("deleted"),204
 
 if __name__ == "__main__":
