@@ -134,11 +134,10 @@ def update3(id):
 ### DELETES
 @app.route("/DeleteAmounts/<id>", methods=["DELETE"])
 def delete1(id):
-    data = request.get_json(force=True)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./AMOUNTS/DELETE.txt').read()
-    file_str = file_str.format(data['Quantity'], data['Price'], data['LocationId'], data['ExtentId'], id)
+    file_str = file_str.format(id)
     cursor.execute(file_str, multi=True)
     myDb.commit()
     cursor.close()
@@ -147,11 +146,10 @@ def delete1(id):
 
 @app.route("/DeleteExtents/<id>", methods=["DELETE"])
 def delete2(id):
-    data = request.get_json(force=True)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/DELETE.txt').read()
-    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    file_str = file_str.format(id)
     cursor.execute(file_str, multi=True)
     myDb.commit()
     cursor.close()
