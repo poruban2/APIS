@@ -54,7 +54,6 @@ def read3():
 @app.route("/CreateAmounts", methods=["POST"])
 def create1():
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./AMOUNTS/INSERT.txt').read()
@@ -68,7 +67,6 @@ def create1():
 @app.route("/CreateExtents", methods=["POST"])
 def create2():
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/INSERT.txt').read()
@@ -82,7 +80,6 @@ def create2():
 @app.route("/CreateLocations", methods=["POST"])
 def create3():
     data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./LOCATIONS/INSERT.txt').read()
