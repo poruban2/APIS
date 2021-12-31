@@ -63,7 +63,7 @@ def read3():
     return jsonify({'Locations':vysledok}),200
 
 ### INSERTS
-@app.route("/create_amounts", methods=["POST"])
+@app.route("/cramounts", methods=["POST"])
 def create1():
     data = request.get_json(force=True)
     data_dict = dict(data)
@@ -74,7 +74,7 @@ def create1():
     myDb.commit()
     return jsonify("created"),201
 
-@app.route("/create_extents", methods=["POST"])
+@app.route("/crextents", methods=["POST"])
 def create2():
     data = request.get_json(force=True)
     data_dict = dict(data)
@@ -85,7 +85,7 @@ def create2():
     myDb.commit()
     return jsonify("created"),201
 
-@app.route("/create_locations", methods=["POST"])
+@app.route("/crlocations", methods=["POST"])
 def create3():
     data = request.get_json(force=True)
     data_dict = dict(data)
