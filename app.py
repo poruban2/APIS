@@ -113,7 +113,7 @@ def update2(id):
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./EXTENTS/UPDATE.txt').read()
-    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    file_str = file_str.format(data['Length'], data['Width'], data['Seedlings'], id)
     cursor.execute(file_str, multi=True)
     myDb.commit()
     cursor.close()
