@@ -160,12 +160,10 @@ def delete2(id):
 
 @app.route("/DeleteLocations/<id>", methods=["DELETE"])
 def delete3(id):
-    data = request.get_json(force=True)
-    data_dict = dict(data)
     myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
     cursor = myDb.cursor()
     file_str = open(r'./LOCATIONS/DELETE.txt').read()
-    file_str = file_str.format(data['Name'], data['Address'], data['Manager'], data['Contact'], id)
+    file_str = file_str.format(id)
     cursor.execute(file_str, multi=True)
     myDb.commit()
     cursor.close()
