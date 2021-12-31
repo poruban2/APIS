@@ -10,44 +10,56 @@ CORS(app)
 ### SELECTS
 @app.route("/read_amounts", methods=["GET"])
 def read1():
-    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
-    cursor = myDb.cursor()
-    file_str = open(r'./AMOUNTS/SELECT.txt').read()
-    cursor.execute(file_str, multi=True)
-    result = cursor.fetchall()
-    cursor.close()
-    myDb.close()
-    vysledok = []
-    for i in result:
-        vysledok.append(i)
+    try:
+        myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
+        cursor = myDb.cursor()
+        file_str = open(r'./AMOUNTS/SELECT.txt').read()
+        cursor.execute(file_str, multi=True)
+        result = cursor.fetchall()
+        cursor.close()
+        myDb.close()
+        vysledok = []
+        for i in result:
+            vysledok.append(i)
+    except MYSQL.Error as e:
+        print(e)
+        vysledok = [[1, 2, 3, 4]]
     return jsonify({'Amounts':vysledok}),200
 
 @app.route("/read_extents", methods=["GET"])
 def read2():
-    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
-    cursor = myDb.cursor()
-    file_str = open(r'./EXTENTS/SELECT.txt').read()
-    cursor.execute(file_str, multi=True)
-    result = cursor.fetchall()
-    cursor.close()
-    myDb.close()
-    vysledok = []
-    for i in result:
-        vysledok.append(i)
+    try:
+        myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
+        cursor = myDb.cursor()
+        file_str = open(r'./EXTENTS/SELECT.txt').read()
+        cursor.execute(file_str, multi=True)
+        result = cursor.fetchall()
+        cursor.close()
+        myDb.close()
+        vysledok = []
+        for i in result:
+            vysledok.append(i)
+    except MYSQL.Error as e:
+        print(e)
+        vysledok = [[1, 2, 3]]
     return jsonify({'Extents':vysledok}),200
 
 @app.route("/read_locations", methods=["GET"])
 def read3():
-    myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
-    cursor = myDb.cursor()
-    file_str = open(r'./LOCATIONS/SELECT.txt').read()
-    cursor.execute(file_str, multi=True)
-    result = cursor.fetchall()
-    cursor.close()
-    myDb.close()
-    vysledok = []
-    for i in result:
-        vysledok.append(i)
+    try:
+        myDb = MYSQL.connect(host="147.232.40.14", user ="dn463ri", passwd="Rai0phai", database="dn463ri")
+        cursor = myDb.cursor()
+        file_str = open(r'./LOCATIONS/SELECT.txt').read()
+        cursor.execute(file_str, multi=True)
+        result = cursor.fetchall()
+        cursor.close()
+        myDb.close()
+        vysledok = []
+        for i in result:
+            vysledok.append(i)
+    except MYSQL.Error as e:
+        print(e)
+        vysledok = [["Pole1", "Zelena 12", "Lukas Tresa", "+421948925787"]]        
     return jsonify({'Locations':vysledok}),200
 
 ### INSERTS
