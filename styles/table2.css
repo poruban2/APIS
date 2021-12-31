@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Quicksand:wght@500&display=swap');
+
+.table {
+    box-shadow: 0 0 10px black;
+    border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    margin-left: 230px;
+    font-weight: bold;
+}
+
+.table thead th {
+    background-color: rgb(78, 133, 155);
+    color: white;
+}
+
+.table td, .table th{
+    padding: 10px 20px;
+    background-color: rgb(158, 159, 160);
+    
+}
+
+.table tbody tr:nth-of-type(even) {
+    background: white;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.table-box{
+    display: flex;
+    justify-content: space-around;  
+}
+
+.tab-p {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 20px;
+}
+
+.table2 {
+    box-shadow: 0 0 10px black;
+    border-collapse: collapse;
+    font-family: 'Quicksand', sans-serif;
+    overflow: hidden;
+    margin-left: 270px;
+    font-weight: bold;
+}
+
+.table2 thead th {
+    background-color: rgb(78, 133, 155);
+    color: white;
+}
+
+.table2 td, .table2 th{
+    padding: 10px 20px;
+    background-color: rgb(158, 159, 160);
+    
+}
+
+.table2 tbody tr:nth-of-type(even) {
+    background: white;
+}
+
+.table2 tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.table-box{
+    display: flex;
+    justify-content: space-around;    
+}
+
+.tab-p2 {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 20px;
+}
+
+
+.add-p {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: center;   
+}
+
+input[type=text], select, textarea {
+    display: flexbox;
+    align-items: center;
+    width: 10%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    background-color: rgb(255, 255, 255);
+    resize: horizontal; /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+
+  input[type=int], select, textarea {
+    display: flexbox;
+    align-items: center;
+    width: 10%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    background-color: rgb(255, 255, 255);
+    resize: horizontal; /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: rgba(0, 136, 169, 1);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: rgb(46, 148, 114);
+  }
